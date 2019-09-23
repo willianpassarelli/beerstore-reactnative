@@ -9,7 +9,7 @@ const Header = ({ navigation }) => {
     <Container>
       <Logo />
       <IconCart>
-        <Icon name="shopping-cart" color="#fff" size={34} />
+        <Icon name="shopping-cart" color="#fff" size={24} />
         <ItemCount>2</ItemCount>
       </IconCart>
     </Container>

@@ -10,24 +10,17 @@ export const Container = styled.View`
   background: #e89800;
 `;
 
-export const LogoText = styled.Image.attrs({
-  resizeMode: 'cover',
-})`
-  width: 104px;
-  height: 69px;
-`;
-
 export const Logo = styled.Image.attrs({
   source: logo,
   resizeMode: 'cover',
 })`
-  width: 117px;
-  height: 100px;
+  width: 185px;
+  height: 32px;
 `;
 
 export const IconCart = styled.TouchableOpacity`
-  height: 34px;
-  width: 34px;
+  height: 24px;
+  width: 24px;
   flex: 1;
   align-items: flex-end;
   justify-content: flex-end;
