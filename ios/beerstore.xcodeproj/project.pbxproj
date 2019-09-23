@@ -31,6 +31,7 @@
 		17FCEE3FC5B14340A2E02707 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82EAF52CC0AC4DF0AC13DA2C /* Octicons.ttf */; };
 		2E01D353E9644AD79459AFA7 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72091DD14830457BA42B2D54 /* SimpleLineIcons.ttf */; };
 		D1BE023FEEDD4E6AB2AFC011 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE77B5AA6FE44C199D504484 /* Zocial.ttf */; };
+		2255F011B5124AEA934ABBA2 /* libRNIntl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0DEF0AD9014733A9B6D41F /* libRNIntl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		82EAF52CC0AC4DF0AC13DA2C /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		72091DD14830457BA42B2D54 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EE77B5AA6FE44C199D504484 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2969ABCEF8274E86AF5C6939 /* RNIntl.xcodeproj */ = {isa = PBXFileReference; name = "RNIntl.xcodeproj"; path = "../node_modules/react-native-intl/RNIntl.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		3D0DEF0AD9014733A9B6D41F /* libRNIntl.a */ = {isa = PBXFileReference; name = "libRNIntl.a"; path = "libRNIntl.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2255F011B5124AEA934ABBA2 /* libRNIntl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +163,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2969ABCEF8274E86AF5C6939 /* RNIntl.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -536,6 +541,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beerstore.app/beerstore";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Debug;
 		};
@@ -555,6 +568,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beerstore.app/beerstore";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Release;
 		};
@@ -574,6 +595,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = beerstore;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Debug;
 		};
@@ -592,6 +617,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = beerstore;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Release;
 		};
@@ -619,6 +648,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Debug;
 		};
@@ -646,6 +683,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Release;
 		};
@@ -672,6 +717,14 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beerstore-tvOS.app/beerstore-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Debug;
 		};
@@ -698,6 +751,14 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beerstore-tvOS.app/beerstore-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/..\node_modules\react-native-intl\RNIntl",
+				);
 			};
 			name = Release;
 		};

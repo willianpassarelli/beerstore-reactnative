@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { formatPrice } from '~/util/format';
 
 import api from '~/services/api';
 
@@ -14,16 +16,23 @@ import {
   ProductImage,
   ProductPrice,
   ProductTitle,
-  AddCart,
-  AddText,
-  AddAmount,
+  ProductButton,
+  ProductButtonText,
   ProductDetails,
-  DetailsBackground,
+  DetailsContainer,
+  DetailTitle,
+  DetailPrice,
+  DetailImage,
+  DetailDescription,
+  DetailAmount,
+  ContainerButton,
+  AddButtonText,
 } from './styles';
 
-class Main extends Component {
+class Home extends React.Component {
   state = {
     products: [],
+    productView: {},
   };
 
   async componentDidMount() {
@@ -31,48 +40,69 @@ class Main extends Component {
 
     const data = response.data.map(product => ({
       ...product,
+      priceFormatted: formatPrice(product.price),
     }));
 
     this.setState({ products: data });
   }
+
+  handleProductView = async id => {
+    const response = await api.get(`products/${id}`);
+
+    this.setState({ productView: response.data });
+  };
 
   renderProduct = ({ item }) => {
     return (
       <Products key={item.id}>
         <CardContainer>
           <ProductImage source={{ uri: item.image }} />
-          <ProductPrice>{item.price}</ProductPrice>
+          <ProductPrice>{item.priceFormatted}</ProductPrice>
           <ProductTitle>{item.title}</ProductTitle>
-          <AddCart>
-            <Icon name="add-shopping-cart" color="#e89800" size={22} />
-            <AddText>ADICIONAR</AddText>
-          </AddCart>
+          <ProductButton onPress={() => this.handleProductView(item.id)}>
+            <Icon name="eye" color="#e89800" size={22} />
+            <ProductButtonText>VISUALIZAR</ProductButtonText>
+          </ProductButton>
         </CardContainer>
       </Products>
     );
   };
 
   render() {
-    const { products } = this.state;
+    const { products, productView } = this.state;
     return (
       <Container>
         <FlatList
           horizontal
+          showsHorizontalScrollIndicator={false}
           data={products}
           keyExtractor={item => String(item.id)}
           renderItem={this.renderProduct}
         />
 
         <ProductDetails
+          key={productView.id}
           colors={['#F97427', '#FFF522']}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
         >
-          <DetailsBackground />
+          <DetailsContainer>
+            <DetailTitle>{productView.title}</DetailTitle>
+            <DetailPrice>{productView.priceFormatted}</DetailPrice>
+            <DetailDescription>{productView.description}</DetailDescription>
+            {productView.id && (
+              <ContainerButton>
+                <Icon name="cart-plus" color="#fff" size={24} />
+                <DetailAmount>0</DetailAmount>
+                <AddButtonText>ADICIONAR</AddButtonText>
+              </ContainerButton>
+            )}
+            <DetailImage source={{ uri: productView.image }} />
+          </DetailsContainer>
         </ProductDetails>
       </Container>
     );
   }
 }
 
-export default connect()(Main);
+export default connect()(Home);
