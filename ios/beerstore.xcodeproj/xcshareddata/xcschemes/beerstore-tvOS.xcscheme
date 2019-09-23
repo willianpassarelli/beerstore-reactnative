@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "bearstore-tvOS.app"
-               BlueprintName = "bearstore-tvOS"
-               ReferencedContainer = "container:bearstore.xcodeproj">
+               BuildableName = "beerstore-tvOS.app"
+               BlueprintName = "beerstore-tvOS"
+               ReferencedContainer = "container:beerstore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "bearstore-tvOSTests.xctest"
-               BlueprintName = "bearstore-tvOSTests"
-               ReferencedContainer = "container:bearstore.xcodeproj">
+               BuildableName = "beerstore-tvOSTests.xctest"
+               BlueprintName = "beerstore-tvOSTests"
+               ReferencedContainer = "container:beerstore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "bearstore-tvOSTests.xctest"
-               BlueprintName = "bearstore-tvOSTests"
-               ReferencedContainer = "container:bearstore.xcodeproj">
+               BuildableName = "beerstore-tvOSTests.xctest"
+               BlueprintName = "beerstore-tvOSTests"
+               ReferencedContainer = "container:beerstore.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bearstore-tvOS.app"
-            BlueprintName = "bearstore-tvOS"
-            ReferencedContainer = "container:bearstore.xcodeproj">
+            BuildableName = "beerstore-tvOS.app"
+            BlueprintName = "beerstore-tvOS"
+            ReferencedContainer = "container:beerstore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bearstore-tvOS.app"
-            BlueprintName = "bearstore-tvOS"
-            ReferencedContainer = "container:bearstore.xcodeproj">
+            BuildableName = "beerstore-tvOS.app"
+            BlueprintName = "beerstore-tvOS"
+            ReferencedContainer = "container:beerstore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bearstore-tvOS.app"
-            BlueprintName = "bearstore-tvOS"
-            ReferencedContainer = "container:bearstore.xcodeproj">
+            BuildableName = "beerstore-tvOS.app"
+            BlueprintName = "beerstore-tvOS"
+            ReferencedContainer = "container:beerstore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

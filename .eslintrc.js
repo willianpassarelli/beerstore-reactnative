@@ -1,29 +1,36 @@
 module.exports = {
   env: {
-    browser: true,
-    es6: true
+    es6: true,
   },
-  extends: ["airbnb", "prettier", "prettier/react"],
+  extends: ['airbnb', 'plugin:react-native/all', 'prettier', 'prettier/react'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+    __DEV__: 'readonly',
   },
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module',
   },
-  plugins: ["react", "prettier"],
+  plugins: ['react', 'react-native', 'jsx-a11y', 'import', 'prettier'],
+  settings: {
+    'import/resolver': {
+      'babel-plugin-root-import': { rootPathSuffix: 'src' },
+    },
+  },
   rules: {
-    "prettier/prettier": "error",
-    "react/jsx-filename-extension": ["warn", { extensions: [".jsx", "js"] }],
-    "import/prefer-default-export": "off",
-    "jsx-a11y/control-has-associated-label": "off",
-    "react/state-in-constructor": "off",
-    "no-console": ["error", { allow: ["tron"] }],
-    "no-param-reassign": "off"
-  }
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'react/jsx-one-expression-per-line': 'off',
+    'react-native/no-color-literals': 'off',
+    'react-native/sort-styles': 'off',
+    'global-require': 'off',
+    'react-native/no-raw-text': 'off',
+  },
 };
