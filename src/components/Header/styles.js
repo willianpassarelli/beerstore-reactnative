@@ -5,9 +5,8 @@ import logo from '../../assets/logo.png';
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
   justify-content: space-between;
-  background: #e89800;
 `;
 
 export const Logo = styled.Image.attrs({
