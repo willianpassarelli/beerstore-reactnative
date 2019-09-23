@@ -1,0 +1,66 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "amount": 3
+    },
+    {
+      "id": 2,
+      "amount": 5
+    },
+    {
+      "id": 3,
+      "amount": 2
+    },
+    {
+      "id": 4,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "amount": 5
+    },
+    {
+      "id": 6,
+      "amount": 10
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Corona Extra",
+      "price": 4.99,
+      "image": "https://www.cervejariaespetomais.com.br/wp-content/uploads/2019/05/CERVEJA-CORONA-VILA-MADALENA.png"
+    },
+    {
+      "id": 2,
+      "title": "Cerveja Colorado Appia",
+      "price": 39.9,
+      "image": "https://superprix.vteximg.com.br/arquivos/ids/175217-600-600/Cerveja-Colorado-Appia-600ml.png?v=636294868353130000"
+    },
+    {
+      "id": 3,
+      "title": "Cerveja Heineken",
+      "price": 19.9,
+      "image": "https://superprix.vteximg.com.br/arquivos/ids/172990-600-600/Cerveja-Heineken-330ml.png?v=636125749063400000"
+    },
+    {
+      "id": 5,
+      "title": "Goose Island Honkers Ale",
+      "price": 39.9,
+      "image": "https://www.ambev.com.br/conteudo/uploads/2019/03/goose-island_honekrs-ale_355ml.png"
+    },
+    {
+      "id": 6,
+      "title": "Budweiser",
+      "price": 19.9,
+      "image": "https://www.budweiser.com.br/img/produtos/budweiser-garrafa-375ml-destaque.png"
+    },
+    {
+      "id": 4,
+      "title": "Blondine Spices",
+      "price": 79.9,
+      "image": "http://blondine.com.br/wp-content/uploads/spices.png"
+    }
+  ]
+}

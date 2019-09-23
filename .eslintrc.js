@@ -32,5 +32,7 @@ module.exports = {
     'react-native/sort-styles': 'off',
     'global-require': 'off',
     'react-native/no-raw-text': 'off',
+    'react/prefer-stateless-function': 'off',
+    'react/state-in-constructor': 'off',
   },
 };
