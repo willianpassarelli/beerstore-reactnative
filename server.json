@@ -30,37 +30,43 @@
       "id": 1,
       "title": "Corona Extra",
       "price": 4.99,
+      "description": "Criada em 1925, a Cerveja Corona Extra 355ml de baixa graduação alcóolica, com sabor leve e refrescante, a Corona é uma Premium American Lager perfeita para se tomar na praia com os amigos.",
       "image": "https://www.cervejariaespetomais.com.br/wp-content/uploads/2019/05/CERVEJA-CORONA-VILA-MADALENA.png"
     },
     {
       "id": 2,
-      "title": "Cerveja Colorado Appia",
+      "title": "Colorado Appia",
       "price": 39.9,
-      "image": "https://superprix.vteximg.com.br/arquivos/ids/175217-600-600/Cerveja-Colorado-Appia-600ml.png?v=636294868353130000"
+      "description": "Cerveja Colorado Appia 600ml. A palavra Appia vem do latim e significa abelha. O nome perfeito para a primeira cerveja do Brasil a utilizar mel em sua fórmula.",
+      "image": "https://superprix.vteximg.com.br/arquivos/ids/175217-600-600/Cerveja-Colorado-Appia-600ml.png"
     },
     {
       "id": 3,
-      "title": "Cerveja Heineken",
+      "title": "Heineken",
       "price": 19.9,
-      "image": "https://superprix.vteximg.com.br/arquivos/ids/172990-600-600/Cerveja-Heineken-330ml.png?v=636125749063400000"
+      "description": "Reconhecida mundialmente pela garrafa verde, a estrela vermelha e seus eventos esportivos que patrocina, a cerveja holandesa vem mantido o sucesso entre jovens e adultos.",
+      "image": "https://superprix.vteximg.com.br/arquivos/ids/172990-600-600/Cerveja-Heineken-330ml.png"
     },
     {
       "id": 5,
       "title": "Goose Island Honkers Ale",
       "price": 39.9,
+      "description": "Com 4,1% de teor alcoólico, 30 IBU e aroma de frutas tropicais, a Honkers Ale é uma Session IPA leve e refrescante .",
       "image": "https://www.ambev.com.br/conteudo/uploads/2019/03/goose-island_honekrs-ale_355ml.png"
     },
     {
       "id": 6,
       "title": "Budweiser",
       "price": 19.9,
-      "image": "https://www.budweiser.com.br/img/produtos/budweiser-garrafa-375ml-destaque.png"
+      "description": "A cerveja Budweiser é uma standard American lager de sabor leve, cor clara e aroma discreto.",
+      "image": "https://aogosto.com.br/wp-content/uploads/2016/01/budweiser.png"
     },
     {
       "id": 4,
       "title": "Blondine Spices",
       "price": 79.9,
-      "image": "http://blondine.com.br/wp-content/uploads/spices.png"
+      "description": "Cerveja estilo Saison é tradicional da Bélgica e tem como característica a liberdade criativa de adição de especiarias.",
+      "image": "https://www.paodeacucar.com/img/uploads/1/392/619392.png"
     }
   ]
 }
