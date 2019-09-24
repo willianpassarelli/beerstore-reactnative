@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import CartIcon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -26,6 +27,8 @@ import {
   TotalTitle,
   ButtonOrder,
   OrderText,
+  EmptyContainer,
+  EmptyText,
 } from './styles';
 
 function Cart({
@@ -34,6 +37,7 @@ function Cart({
   removeFromCart,
   total,
   updateAmountRequest,
+  cartSize,
 }) {
   function increment(product) {
     updateAmountRequest(product.id, product.amount + 1);
@@ -48,33 +52,41 @@ function Cart({
         <TotalTitle>TOTAL</TotalTitle>
         <TotalText>{total}</TotalText>
       </TotalContainer>
-      <Scroll>
-        {cart.map(product => (
-          <CartList key={product.id}>
-            <Products>
-              <ProductImage source={{ uri: product.image }} />
-              <ProductInfo>
-                <ProductTitle>{product.title}</ProductTitle>
-                <ProductPrice>{product.priceFormatted}</ProductPrice>
-              </ProductInfo>
-              <ButtonDelete onPress={() => removeFromCart(product.id)}>
-                <Icon name="trash-o" size={22} color="#e89800" />
-              </ButtonDelete>
-            </Products>
-            <ProductControls>
-              <ProductControlButton onPress={() => decrement(product)}>
-                <Icon name="minus" size={14} color="#e89800" />
-              </ProductControlButton>
-              <ProductAmount value={String(product.amount)} />
-              <ProductControlButton onPress={() => increment(product)}>
-                <Icon name="plus" size={14} color="#e89800" />
-              </ProductControlButton>
-              <ProductSubTotal>{product.subtotal}</ProductSubTotal>
-            </ProductControls>
-          </CartList>
-        ))}
-      </Scroll>
-      <ButtonOrder>
+      {cart.length ? (
+        <Scroll>
+          {cart.map(product => (
+            <CartList key={product.id}>
+              <Products>
+                <ProductImage source={{ uri: product.image }} />
+                <ProductInfo>
+                  <ProductTitle>{product.title}</ProductTitle>
+                  <ProductPrice>{product.priceFormatted}</ProductPrice>
+                </ProductInfo>
+                <ButtonDelete onPress={() => removeFromCart(product.id)}>
+                  <Icon name="trash-o" size={22} color="#e89800" />
+                </ButtonDelete>
+              </Products>
+              <ProductControls>
+                <ProductControlButton onPress={() => decrement(product)}>
+                  <Icon name="minus" size={14} color="#e89800" />
+                </ProductControlButton>
+                <ProductAmount value={String(product.amount)} />
+                <ProductControlButton onPress={() => increment(product)}>
+                  <Icon name="plus" size={14} color="#e89800" />
+                </ProductControlButton>
+                <ProductSubTotal>{product.subtotal}</ProductSubTotal>
+              </ProductControls>
+            </CartList>
+          ))}
+        </Scroll>
+      ) : (
+        <EmptyContainer>
+          <CartIcon name="remove-shopping-cart" size={64} color="#eee" />
+          <EmptyText>Seu carrinho está vazio.</EmptyText>
+        </EmptyContainer>
+      )}
+
+      <ButtonOrder disabled={cartSize}>
         <OrderText>FINALIZAR PEDIDO</OrderText>
       </ButtonOrder>
     </Container>
@@ -91,6 +103,7 @@ const mapStateToProps = state => ({
       return total + product.price * product.amount;
     }, 0)
   ),
+  cartSize: state.cart.length ? false : true,
 });
 
 const mapDispatchToProps = dispatch =>
