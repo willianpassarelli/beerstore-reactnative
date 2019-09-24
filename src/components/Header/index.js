@@ -8,7 +8,7 @@ const Header = ({ navigation }) => {
   return (
     <Container>
       <Logo />
-      <IconCart>
+      <IconCart onPress={() => navigation.navigate('Cart')}>
         <Icon name="shopping-cart" color="#000" size={24} />
         <ItemCount>2</ItemCount>
       </IconCart>
