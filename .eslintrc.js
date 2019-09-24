@@ -34,5 +34,6 @@ module.exports = {
     'react-native/no-raw-text': 'off',
     'react/prefer-stateless-function': 'off',
     'react/state-in-constructor': 'off',
+    'no-param-reassign': 'off',
   },
 };
