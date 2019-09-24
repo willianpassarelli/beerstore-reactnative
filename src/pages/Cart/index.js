@@ -1,9 +1,15 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { formatPrice } from '~/util/format';
+
+import * as CartActions from '~/store/modules/cart/actions';
 
 import {
   Container,
+  Scroll,
   CartList,
   Products,
   ProductImage,
@@ -22,48 +28,75 @@ import {
   OrderText,
 } from './styles';
 
-class Cart extends React.Component {
-  render() {
-    return (
-      <Container>
-        <TotalContainer>
-          <TotalTitle>SUBTOTAL</TotalTitle>
-          <TotalText>R$ 420,00</TotalText>
-        </TotalContainer>
-        <CartList>
-          <Products>
-            <ProductImage
-              source={{
-                uri:
-                  'https://www.ambev.com.br/conteudo/uploads/2019/03/goose-island_honekrs-ale_355ml.png',
-              }}
-            />
-            <ProductInfo>
-              <ProductTitle>Cerveja Colorado</ProductTitle>
-              <ProductPrice>R$ 210,00</ProductPrice>
-            </ProductInfo>
-            <ButtonDelete onPress={() => {}}>
-              <Icon name="trash-o" size={22} color="#e89800" />
-            </ButtonDelete>
-          </Products>
-          <ProductControls>
-            <ProductControlButton onPress={() => {}}>
-              <Icon name="minus" size={14} color="#e89800" />
-            </ProductControlButton>
-            <ProductAmount value="2" />
-            <ProductControlButton onPress={() => {}}>
-              <Icon name="plus" size={14} color="#e89800" />
-            </ProductControlButton>
-            <ProductSubTotal>R$ 420,00</ProductSubTotal>
-          </ProductControls>
-        </CartList>
-
-        <ButtonOrder>
-          <OrderText>FINALIZAR PEDIDO</OrderText>
-        </ButtonOrder>
-      </Container>
-    );
+function Cart({
+  navigation,
+  cart,
+  removeFromCart,
+  total,
+  updateAmountRequest,
+}) {
+  function increment(product) {
+    updateAmountRequest(product.id, product.amount + 1);
   }
+
+  function decrement(product) {
+    updateAmountRequest(product.id, product.amount - 1);
+  }
+  return (
+    <Container>
+      <TotalContainer>
+        <TotalTitle>TOTAL</TotalTitle>
+        <TotalText>{total}</TotalText>
+      </TotalContainer>
+      <Scroll>
+        {cart.map(product => (
+          <CartList key={product.id}>
+            <Products>
+              <ProductImage source={{ uri: product.image }} />
+              <ProductInfo>
+                <ProductTitle>{product.title}</ProductTitle>
+                <ProductPrice>{product.priceFormatted}</ProductPrice>
+              </ProductInfo>
+              <ButtonDelete onPress={() => removeFromCart(product.id)}>
+                <Icon name="trash-o" size={22} color="#e89800" />
+              </ButtonDelete>
+            </Products>
+            <ProductControls>
+              <ProductControlButton onPress={() => decrement(product)}>
+                <Icon name="minus" size={14} color="#e89800" />
+              </ProductControlButton>
+              <ProductAmount value={String(product.amount)} />
+              <ProductControlButton onPress={() => increment(product)}>
+                <Icon name="plus" size={14} color="#e89800" />
+              </ProductControlButton>
+              <ProductSubTotal>{product.subtotal}</ProductSubTotal>
+            </ProductControls>
+          </CartList>
+        ))}
+      </Scroll>
+      <ButtonOrder>
+        <OrderText>FINALIZAR PEDIDO</OrderText>
+      </ButtonOrder>
+    </Container>
+  );
 }
 
-export default connect()(Cart);
+const mapStateToProps = state => ({
+  cart: state.cart.map(product => ({
+    ...product,
+    subtotal: formatPrice(product.price * product.amount),
+  })),
+  total: formatPrice(
+    state.cart.reduce((total, product) => {
+      return total + product.price * product.amount;
+    }, 0)
+  ),
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

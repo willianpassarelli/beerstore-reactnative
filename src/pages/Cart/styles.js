@@ -10,7 +10,13 @@ export const Products = styled.View`
   padding: 0 20px;
 `;
 
-export const CartList = styled.View``;
+export const Scroll = styled.ScrollView``;
+
+export const CartList = styled.View`
+  padding: 10px 0;
+  border-bottom-color: #eee;
+  border-bottom-width: 1px;
+`;
 
 export const ProductImage = styled.Image.attrs({
   resize: 'cover',
@@ -41,9 +47,7 @@ export const ButtonDelete = styled.TouchableOpacity`
 export const ProductControls = styled.View`
   align-items: center;
   flex-direction: row;
-  padding: 10px 30px;
-  border-bottom-color: #eee;
-  border-bottom-width: 1px;
+  padding: 10px 30px 0 30px;
 `;
 
 export const ProductControlButton = styled.TouchableOpacity``;
