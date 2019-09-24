@@ -91,14 +91,27 @@ export const TotalTitle = styled.Text`
 
 export const ButtonOrder = styled.TouchableOpacity`
   width: 100%;
-  height: 40px;
+  height: 50px;
   align-items: center;
   justify-content: center;
-  background: #e89800;
+  background: ${props => (props.disabled ? '#c6c6c6' : '#e89800')};
 `;
 
 export const OrderText = styled.Text`
   font-size: 18px;
   font-weight: bold;
   color: #fff;
+`;
+
+export const EmptyContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EmptyText = styled.Text`
+  color: #ccc;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 18px;
 `;
