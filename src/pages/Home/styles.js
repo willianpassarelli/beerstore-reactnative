@@ -6,16 +6,15 @@ export const Container = styled.View`
 `;
 
 export const Products = styled.View`
-  flex: 1;
   padding: 20px 5px 0 20px;
   flex-direction: row;
 `;
 
-export const CardContainer = styled.View`
+export const CardContainer = styled.TouchableOpacity`
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   elevation: 3;
   border-radius: 10px;
-  height: 180px;
+  height: 160px;
   width: 130px;
   padding: 100px 10px 10px 10px;
   margin: 20px 0;
@@ -43,26 +42,11 @@ export const ProductTitle = styled.Text.attrs({
   font-size: 16px;
 `;
 
-export const ProductButton = styled.TouchableOpacity`
-  margin-top: 10px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ProductButtonText = styled.Text`
-  flex: 1;
-  text-align: center;
-  font-weight: 700;
-  color: #000;
-`;
-
 export const ProductDetails = styled(LinearGradient)`
   margin-left: 20px;
   align-items: flex-end;
   justify-content: flex-end;
   border-top-left-radius: 30px;
-  background: #e89800;
 `;
 
 export const DetailsContainer = styled.View`
@@ -107,7 +91,7 @@ export const ContainerButton = styled.TouchableOpacity`
 
 export const DetailAmount = styled.Text`
   color: #fff;
-  margin: 0px 4px 0px 10px;
+  margin: 0px 10px;
 `;
 
 export const AddButtonText = styled.Text`

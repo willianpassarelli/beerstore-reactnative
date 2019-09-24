@@ -16,8 +16,6 @@ import {
   ProductImage,
   ProductPrice,
   ProductTitle,
-  ProductButton,
-  ProductButtonText,
   ProductDetails,
   DetailsContainer,
   DetailTitle,
@@ -46,23 +44,17 @@ class Home extends React.Component {
     this.setState({ products: data });
   }
 
-  handleProductView = async id => {
-    const response = await api.get(`products/${id}`);
-
-    this.setState({ productView: response.data });
+  handleProductView = async product => {
+    this.setState({ productView: product });
   };
 
   renderProduct = ({ item }) => {
     return (
       <Products key={item.id}>
-        <CardContainer>
+        <CardContainer onPress={() => this.handleProductView(item)}>
           <ProductImage source={{ uri: item.image }} />
           <ProductPrice>{item.priceFormatted}</ProductPrice>
           <ProductTitle>{item.title}</ProductTitle>
-          <ProductButton onPress={() => this.handleProductView(item.id)}>
-            <Icon name="eye" color="#e89800" size={22} />
-            <ProductButtonText>VISUALIZAR</ProductButtonText>
-          </ProductButton>
         </CardContainer>
       </Products>
     );
