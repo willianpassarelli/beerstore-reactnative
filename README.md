@@ -8,8 +8,7 @@ Neste projeto você poderá ver como é construida uma aplicação com Redux e R
 
 
 ### Telas da Aplicação
-![Android-Emulator-Pixel_3a_API_28_5554-2019-09-24-20-54-42](https://user-images.githubusercontent.com/26445991/65558948-08ffdc00-df0f-11e9-9b36-fc629c87c3a2.gif)
-
+<img src="https://user-images.githubusercontent.com/26445991/65558948-08ffdc00-df0f-11e9-9b36-fc629c87c3a2.gif" height="400">
 
 ## Instalação
 
