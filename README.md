@@ -1,6 +1,6 @@
 # Aplicação com React Native
 
-Projeto construido para estudos da Arquitetura Flux utilizando Redux e Redux Saga
+Projeto construido para estudos da Arquitetura Flux (Redux e Redux Saga)
 
 ## BREWING CO.
 
