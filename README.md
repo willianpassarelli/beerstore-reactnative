@@ -4,7 +4,7 @@ Projeto construido para estudos da Arquitetura Flux (Redux e Redux Saga)
 
 ## BREWING CO.
 
-Neste projeto você poderá ver como é construida uma aplicação com Redux e Redux Saga, também foi utilizado um json local para simular uma API, o intuito do projeto é demonstrar como podemos reutilizar os estados da aplicação através do redux e os beneficios para tornar um Projeto React Native mais organizado.
+Neste projeto você poderá ver como é construído uma aplicação com Redux e Redux Saga utilizando um exemplo simples de e-commerce, também foi utilizado um json local para simular uma API, o intuito do projeto é demonstrar como podemos reutilizar os estados dos componentes através do redux e separar os métodos utilizando o redux-saga.
 
 
 ### Telas da Aplicação
